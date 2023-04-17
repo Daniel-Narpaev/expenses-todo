@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/expenses-todo/static/css/main.1f361987.css",
+    "main.js": "/expenses-todo/static/js/main.f54d02e4.js",
+    "index.html": "/expenses-todo/index.html",
+    "main.1f361987.css.map": "/expenses-todo/static/css/main.1f361987.css.map",
+    "main.f54d02e4.js.map": "/expenses-todo/static/js/main.f54d02e4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1f361987.css",
+    "static/js/main.f54d02e4.js"
+  ]
+}
