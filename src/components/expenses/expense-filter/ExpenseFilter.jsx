@@ -1,6 +1,6 @@
 import React from "react";
-import "./ExpenseFilter.css";
 import ChartBar from "./ChartBar/ChartBar";
+import styled from "styled-components";
 const ExpenseFilter = ({expenses}) => {
     const maximumPrice = 3000
   const months = [
@@ -58,7 +58,7 @@ const ExpenseFilter = ({expenses}) => {
     months[monthNumber].currentPrice += elem.price
 });
   return (
-    <div className="chartContainer">
+    <ChartContainer>
       {months.map((item) => {
         return (
           <ChartBar
@@ -69,8 +69,18 @@ const ExpenseFilter = ({expenses}) => {
           />
         );
       })}
-    </div>
+    </ChartContainer>
   );
 };
 
 export default ExpenseFilter;
+
+const ChartContainer = styled.div`
+   padding: 1rem;
+   border-radius: 12px;
+   background-color: #f8dfff;
+   text-align: center;
+   display: flex;
+   justify-content: space-around;
+   height: 10rem;
+`

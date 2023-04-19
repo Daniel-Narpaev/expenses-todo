@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./Expenses.css";
 import ExpenseItem from "./expense-item/ExpenseItem";
 import ExpenseFilter from "./expense-filter/ExpenseFilter";
 import Select from "./expense-select/Select";
+import styled from "styled-components";
 const Expenses = ({ expenses, onDelete }) => {
   const [selectedYear, setSelectedYear] = useState("2023");
   const [sortForDate, setSortForDate] = useState(false);
@@ -21,7 +21,7 @@ const Expenses = ({ expenses, onDelete }) => {
     return stringifiedYear === selectedYear;
   });
   return (
-    <ul className="list">
+    <UlList>
       <Select descendingFunc={descendingFunc} ascendingFunc={ascendingFunc} getSelectValue={getSelectValue} selectedYear={selectedYear}/>
       <ExpenseFilter expenses={filteredYear} />
       {sortForDate ? (
@@ -67,8 +67,17 @@ const Expenses = ({ expenses, onDelete }) => {
             })}
         </>
       )}
-    </ul>
+    </UlList>
   );
 };
 
 export default Expenses;
+
+const UlList = styled.ul`
+    margin-top: 28px;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid rgb(3, 3, 3);
+    padding: 28px 16px;
+    border-radius: 15px;
+`

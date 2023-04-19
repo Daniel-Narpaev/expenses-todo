@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Input from "../UI/input/Input";
-import "./Form.css";
 import Button from "../UI/button/Button";
+import styled from "styled-components";
 const NewExpense = ({ addNewExpenseHandler }) => {
   const [showForm, setShowForm] = useState(true);
   const [name, setName] = useState("");
@@ -35,14 +35,14 @@ const NewExpense = ({ addNewExpenseHandler }) => {
   };
 
   return (
-    <div className="form">
+    <Form>
       {showForm === true ? (
-        <div className="addExpense">
+        <AddExpense>
           <Button onClick={ShowFormHandler} title="Добавить новый  расходы" />
-        </div>
+        </AddExpense>
       ) : (
         <>
-          <div className="inputBox">
+          <InputBox>
             <Input
               value={name}
               onChange={nameChangeHandler}
@@ -62,9 +62,9 @@ const NewExpense = ({ addNewExpenseHandler }) => {
               type="date"
               title="Дата"
             />
-          </div>
+          </InputBox>
 
-          <div className="btnBox">
+          <BtnBox>
             <Button
               title="Отмена"
               marginright="20px"
@@ -75,11 +75,35 @@ const NewExpense = ({ addNewExpenseHandler }) => {
               title="Добавить расход"
               onClick={saveHandler}
             />
-          </div>
+          </BtnBox>
         </>
       )}
-    </div>
+    </Form>
   );
 };
 
 export default NewExpense;
+
+const Form = styled.div`
+    background-color: #AD9BE9;
+    width: 780px;
+    max-height: 287px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+`
+const AddExpense = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+const BtnBox = styled.div`
+    display: flex;
+    justify-content: flex-end;
+`
+const InputBox = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+`
